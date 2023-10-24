@@ -1,0 +1,289 @@
+<!--
+  Copyright 2018 The Distill Template Authors
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!doctype html>
+
+<style>
+.base-grid,
+.n-header,
+.n-byline,
+.n-title,
+.n-article,
+.n-footer {
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+    grid-column-gap: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 8px;
+}
+
+@media(min-width: 768px) {
+    .base-grid,
+    .n-header,
+    .n-byline,
+    .n-title,
+    .n-article,
+    .n-footer {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+    }
+
+    .grid {
+        grid-column-gap: 16px;
+    }
+}
+
+@media(min-width: 1000px) {
+    .base-grid,
+    .n-header,
+    .n-byline,
+    .n-title,
+    .n-article,
+    .n-footer {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+    }
+
+    .grid {
+        grid-column-gap: 16px;
+    }
+}
+
+@media (min-width: 1180px) {
+    .base-grid,
+    .n-header,
+    .n-byline,
+    .n-title,
+    .n-article,
+    .n-footer {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 32px;
+    }
+    .grid {
+        grid-column-gap: 32px;
+    }
+
+}
+
+.base-grid {
+  grid-column: screen;
+}
+
+/* default grid column assignments */
+.n-title > *  {
+  grid-column: text;
+}
+
+.n-article > *  {
+  grid-column: text;
+}
+
+.n-title {
+    padding: 4rem 0 0.5rem;
+}
+
+.l-page {
+    grid-column: page;
+}
+
+.l-article {
+    grid-column: text;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/*------------------------------------------------------------------*/
+/* title */
+.n-title h1 {
+    font-family: "Barlow",system-ui,Arial,sans-serif;
+    color:#082333;
+    grid-column: text;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .n-title h1 {
+        font-size: 50px;
+    }
+}
+
+
+.n-byline {
+  contain: style;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  line-height: 1.8em;
+  padding: 1.5rem 0;
+  min-height: 1.8em;
+}
+
+.n-byline .byline {
+  grid-column: text;
+}
+
+.byline {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid {
+    display: grid;
+    grid-column-gap: 8px;
+}
+
+@media (min-width: 768px) {
+.grid {
+    grid-column-gap: 16px;
+}
+}
+
+.n-byline p {
+  margin: 0;
+}
+
+.n-byline h3 {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    text-transform: uppercase;
+}
+.n-byline .authors-affiliations {
+  grid-column-end: span 2;
+  grid-template-columns: 1fr 1fr;
+}
+
+ul.authors {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+ul.authors li {
+    padding: 0 0.5rem;
+    display: inline-block;
+}
+
+ul.authors sup {
+    color: rgb(126,126,126);
+}
+
+ul.authors.affiliations  {
+    margin-top: 0.5rem;
+}
+
+ul.authors.affiliations li {
+    color: rgb(126,126,126);
+}
+
+
+
+</style>
+<head>
+    <title>Security Challenges in Natural Language Processing Models</title>
+    <script src="template.v2.js"></script>
+    <meta property="og:title" content="Security Challenges in Natural Language Processing Models">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="utf8">
+</head>
+
+<body>
+  <div class="n-title">
+   <h1>
+    Security Challenges in Natural Language Processing Models
+   </h1>
+  </div>
+  <div class="n-byline">
+   <div class="byline">
+    <ul class="authors">
+      <a href = "https://xuqiongkai.github.io/" style="text-decoration:none; color: inherit;">Qiongkai Xu</a>
+     </li>
+     <li>
+      <a href = "https://xlhex.github.io/" style="text-decoration:none; color: inherit;">Xuanli He</a>
+    </ul>
+   </div>
+  </div>
+  <d-article>
+
+
+    <!--<figure  style="grid-column: text">-->
+        <!--<img src="images/human_eval.png" style="width: 100%; margin-top: 1rem;"/>-->
+          <!--<figcaption> We conduct 2-Alternatative Forced Choice Experiment human evaluation experiment. Subjects are asked to choose between reference high resolution image, and the model output. We measure the performance of the model through confusion rates (% of time, raters choose model output over reference images.) (Above) We achieve close to 50% confusion rate on the task of 16&#215;16 -> 128&#215;128 faces outperforming state of the art face super-resolution methods. (Below) We also achieve 40% confusion rate on the much difficult task of 64x64 -> 256x256 natural images outperforming regression baseline by a large margin. </figcaption>-->
+    <!--</figure>-->
+
+
+<h3>Abstract </h3>
+<p>
+Large-scale natural language processing models have been developed and integrated into numerous applications, given the advantage of their remarkable performance. Nonetheless, the security concerns associated with these models prevent the widespread adoption of these black-box machine learning models. In this tutorial, we will dive into three emerging security issues in NLP research, i.e., backdoor attacks, private data leakage, and imitation attacks. These threats will be introduced in accordance with their threatening usage scenarios, attack methodologies, and defense technologies.
+</p> 
+    <h3>Introduction</h3>
+    
+    <p>
+    Large-scale natural language processing models have recently garnered substantial attention due to their exceptional performance. This promotes a significant proliferation in the development and deployment of black-box NLP APIs across a wide range of applications. Simultaneously, an expanding body of research has revealed profound security vulnerabilities associated with these black-box APIs, encompassing issues such as dysfunctional failures (Gu et al., 2017; Dai et al., 2019; Huang et al., 2023), concerns related to privacy and data leakage (Coavoux et al., 2018; Carlini et al., 2021), and infringements on intellectual property (Wallace et al., 2020; Xu et al., 2022). Those security challenges can lead to issues like data misuse, financial loss, reputation damage, legal disputes, and more.  It is worth noting that these security vulnerabilities are not mere theoretical assumptions. Previous research has demonstrated that both commercial APIs and publicly available models can be easily compromised (Wallace et al., 2020; Carlini et al., 2021; Xu et al., 2022). This tutorial aims to provide a comprehensive overview of the lastest research concerning security challenges in NLP models.
+    </p>
+
+    <h3>Adversarial and Backdoor Attacks</h3>
+    
+    <p>
+    We begin by discussing adversarial attacks in NLP tasks. Such attacks manipulate inputs to compromise the performance of a target model (Alzantot et al., 2018; Ebrahimi et al., 2018; Li et al., 2018). Specifically, by altering specific characters or words, one can mislead a text classifier into assigning an incorrect label. This research underscores the vulnerability of trained NLP models. A notable subset of these attacks is the backdoor attack, wherein the victim model is induced to associate misbehaviors with particular triggers (Dai et al., 2019).  During inference, backdoored models behave normally on clean inputs, whereas misbehaviors can be triggered when the malicious patterns are present. Those misbehaviors range from fooling text classifiers (Dai et al., 2019; Kurita et al., 2020) to mistranslating neutral phrases into controversial ones (Xu et al., 2021).
+    </p>
+
+
+<h3>Privacy and Data Leakage</h3>
+<p>
+Another challenge in NLP models is the potential risk of disclosing data, particularly sensitive content, to untrustworthy parties. A recent widely recognized example is the capability of pre-trained language models, e.g., GPT-2, to generate sentences containing sensitive information when provided with carefully designed prompts (Carlini et al., 2021). Another concern revolves around the possibility that certain information from the training data being inferred through the model’s parameters or the gradient updates, such as membership inference and text recovery (Melis et al., 2019; Gupta et al., 2022). These types of attacks pose significant challenges to collaborative learning of language models (Yang et al., 2019).
+</p>
+
+  <h3>Imitation Attack</h3>
+  <p>
+  The final security challenge within our scope will be the imitation attack on NLP models. With the advancement of NLP models, particularly large pre-trained language models, companies have encapsulated exceptional models into commercial APIs, serving millions of endusers. In order to foster a profitable market, service providers commonly implement pay-as-you-use policies for those APIs. To circumvent service charges, a seminal work (Tramèr et al., 2016) proposed the imitation of the functionality of commercial APIs by relying on predictions from those APIs.  Subsequent research has revealed vulnerabilities associated with imitation attacks that extend beyond the violation of intellectual property, e.g., one can employ the imitation model to craft transferable adversarial examples capable of deceiving the victim model as well (Wallace et al., 2020; He et al., 2021). Moreover, the interaction between the victim model and the imitator can lead to significant privacy breaches (He et al., 2022a). Furthermore, Xu et al. (2022) demonstrate that imitation models can outperform the imitated victim models, particularly in the context of domain adaptation and model ensemble.
+  </p>
+      
+
+<span style="margin-bottom: 10%"></span>
+</d-article>
+
+<d-appendix>
+      <!--<d-bibliography src="https://raw.githubusercontent.com/iterative-refinement/iterative-refinement.github.io/master/bibliography.bib"></d-bibliography>-->
+      <d-bibliography src="https://raw.githubusercontent.com/galtext/galtext.github.io/master/bibliography.bib"></d-bibliography>
+</d-appendix>
+
+</body>
